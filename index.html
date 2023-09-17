@@ -49,15 +49,18 @@
         /* padding: 2rem; */
       }
       .maincontainer {
-        height: 60vh;
+        height: 100vh;
         background: url(./images/bg-pattern-intro-desktop.svg),
           linear-gradient(to right, var(--Verylightred), var(--Lightred));
         background-size: 300%;
-        background-position: center;
         background-repeat: no-repeat;
-        padding: 2rem 4rem;
+        padding: 2rem 24px;
+
         border-radius: 0 0 0 50px;
+        color: var(--White);
       }
+
+      /* header style */
       header {
         display: flex;
         justify-content: space-between;
@@ -66,6 +69,11 @@
         display: flex;
         align-items: center;
       }
+      nav {
+        padding: 0 1rem;
+        font-size: 15px;
+      }
+
       .headerright {
         display: flex;
         align-items: center;
@@ -73,14 +81,46 @@
       .dropdown {
         display: none;
       }
+      .headerright button {
+        padding: 0.5rem 1rem;
+        border-radius: 16px;
+        margin: 0 0 0 0.5rem;
+        border: none;
+        color: var(--Lightred);
+        font-weight: bold;
+      }
+      .headerright button:first-child {
+        color: var(--White);
+        background-color: inherit;
+      }
+      .headerright button:hover {
+        background-color: var(--Verylightred);
+        color: var(--White);
+      }
+
+      /* main style */
       .main1 {
         margin: 50px 0;
         text-align: center;
+      }
+      .main1 button {
+        padding: 0.5rem 1rem;
+        border-radius: 16px;
+        margin: 0 0 0 0.5rem;
+        background-color: var(--White);
+        border: none;
+        color: var(--Lightred);
+        font-weight: bold;
       }
       li,
       ul,
       button {
         font-family: "Ubuntu", sans-serif;
+      }
+      @media screen and (width >= 1000px) {
+        .maincontainer {
+          padding: 2rem 168px;
+        }
       }
     </style>
   </head>
