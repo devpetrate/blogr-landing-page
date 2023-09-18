@@ -45,18 +45,20 @@
         /* height: 100vh; */
         font-family: "Overpass", sans-serif;
       }
-      .container {
-        /* padding: 2rem; */
-      }
+
+      /* .container { */
+      /* padding: 2rem; */
+      /* } */
+
       .maincontainer {
-        height: 100vh;
+        height: 70vh;
         background: url(./images/bg-pattern-intro-desktop.svg),
           linear-gradient(to right, var(--Verylightred), var(--Lightred));
-        background-size: 300%;
+        background-size: 200%;
         background-repeat: no-repeat;
         padding: 2rem 24px;
-
-        border-radius: 0 0 0 50px;
+        background-position: center;
+        border-radius: 0 0 0 150px;
         color: var(--White);
       }
 
@@ -73,6 +75,9 @@
         padding: 0 1rem;
         font-size: 15px;
       }
+      nav * {
+        margin: 0 1rem;
+      }
 
       .headerright {
         display: flex;
@@ -81,45 +86,139 @@
       .dropdown {
         display: none;
       }
-      .headerright button {
+      .headerright button,
+      .main1 button {
         padding: 0.5rem 1rem;
         border-radius: 16px;
         margin: 0 0 0 0.5rem;
-        border: none;
-        color: var(--Lightred);
         font-weight: bold;
       }
       .headerright button:first-child {
         color: var(--White);
         background-color: inherit;
+        border: none;
       }
-      .headerright button:hover {
+      .headerright button:last-child {
+        color: var(--Lightred);
+        border: none;
+      }
+      .headerright button:hover,
+      .btnfirst:hover {
         background-color: var(--Verylightred);
         color: var(--White);
       }
 
       /* main style */
       .main1 {
-        margin: 50px 0;
+        margin: 90px 0;
         text-align: center;
       }
-      .main1 button {
-        padding: 0.5rem 1rem;
-        border-radius: 16px;
-        margin: 0 0 0 0.5rem;
-        background-color: var(--White);
-        border: none;
+
+      .main1 h1 {
+        font-size: 70px;
+        font-weight: light;
+      }
+      .main1 p {
+        font-size: large;
+        margin-bottom: 40px;
+      }
+      .btnfirst {
         color: var(--Lightred);
-        font-weight: bold;
+        border: none;
+      }
+      .btnlast {
+        color: var(--White);
+        background-color: inherit;
+        border: 1px solid;
+      }
+      .btnlast:hover {
+        background-color: var(--White);
+        color: var(--Verylightred);
       }
       li,
       ul,
       button {
         font-family: "Ubuntu", sans-serif;
       }
+
+      /* Section 2 */
+      .section2 {
+        height: 110vh;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        padding: 6rem 24px;
+        background-image: url(./images/illustration-editor-desktop.svg);
+        background-size: 45rem;
+        background-position: calc(100% + 15vw) center;
+        background-repeat: no-repeat;
+      }
+      .section2 h1 {
+        align-self: center;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--Verydarkblue);
+      }
+      .section2 h1 {
+        font-size: 50px;
+      }
+      .section2 h2 {
+        margin: 1.5rem 0;
+        color: var(--Verydarkblue);
+      }
+      .section2 p {
+        line-height: 180%;
+        margin-bottom: 1.5rem;
+      }
+      .section2 * {
+        width: 50%;
+      }
+      /* section 3 */
+
+      .section3 {
+        height: 60vh;
+        width: 100vw;
+        display: flex;
+        align-content: center;
+        padding: 6rem 24px;
+        color: var(--White);
+        background: url(./images/Mask\ group.png),
+          linear-gradient(to right, var(--Verydarkgrayblue), var(--Verydarkdesaturatedblue));
+        background-size: 35px;
+        /* background-position: calc(100% + 70vw) center; */
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 0 150px;
+      }
+      .section3 img {
+        width: 35rem;
+        height: 37rem;
+        position: relative;
+        top: -150px;
+        left: -50px;
+      }
+      .section3cont * {
+        margin: 1.5rem 0;
+        line-height: 180%;
+      }
+      .section3cont h2 {
+        font-size: 40px;
+      }
+
+      /* section 4 */
+
+      .section4 {
+        height: 100vh;
+        background: url(./images/illustration-laptop-desktop.svg);
+        background-repeat: no-repeat;
+      }
       @media screen and (width >= 1000px) {
-        .maincontainer {
-          padding: 2rem 168px;
+        .maincontainer,
+        .section2,
+        .section3,
+        .section4 {
+          padding-right: 168px;
+          padding-left: 168px;
         }
       }
     </style>
@@ -170,8 +269,8 @@
         <main class="main1">
           <h1>A modern publishing platform</h1>
           <p>Grow your audience and build your online brand</p>
-          <button>Start for Free</button>
-          <button>Learn More</button>
+          <button class="btnfirst">Start for Free</button>
+          <button class="btnlast">Learn More</button>
         </main>
       </div>
       <div class="section2">
@@ -191,12 +290,15 @@
         </p>
       </div>
       <div class="section3">
-        <h2>State of the Art Infrastructure</h2>
-        <p>
-          With reliability and speed in mind, worldwide data centers provide the backbone for
-          ultra-fast connectivity. This ensures your site will load instantly, no matter where your
-          readers are, keeping your site competitive.
-        </p>
+        <img src="./images/illustration-phones.svg" alt="" />
+        <div class="section3cont">
+          <h2>State of the Art Infrastructure</h2>
+          <p>
+            With reliability and speed in mind, worldwide data centers provide the backbone for
+            ultra-fast connectivity. This ensures your site will load instantly, no matter where
+            your readers are, keeping your site competitive.
+          </p>
+        </div>
       </div>
       <div class="section4">
         <h2>Free, open, simple</h2>
