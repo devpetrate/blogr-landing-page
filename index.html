@@ -208,15 +208,44 @@
       /* section 4 */
 
       .section4 {
-        height: 100vh;
+        height: 150vh;
         background: url(./images/illustration-laptop-desktop.svg);
         background-repeat: no-repeat;
+        background-position: calc(100% - 54vw) center;
+        padding: 20rem 24px;
+        color: var(--Verydarkblue);
       }
+      .section4 * {
+        padding-left: 50%;
+      }
+      .section4 h2 {
+        margin-top: 10px;
+        margin: 3rem 0 1.5rem 0;
+      }
+      .section4 p {
+        line-height: 180%;
+      }
+
+      /* footer */
+      footer {
+        height: 60vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: 6rem 24px;
+        background-color: var(--Verydarkblackblue);
+      }
+      .foothead {
+        color: var(--white);
+      }
+
       @media screen and (width >= 1000px) {
         .maincontainer,
         .section2,
         .section3,
-        .section4 {
+        .section4,
+        footer {
           padding-right: 168px;
           padding-left: 168px;
         }
@@ -316,35 +345,34 @@
         </p>
       </div>
       <footer>
-        <ul>
-          <l1
-            >Product
-            <ul>
-              <li>Overview</li>
-              <li>Pricing</li>
-              <li>Marketplace</li>
-              <li>Features</li>
-              <li>Integrations</li>
-            </ul>
-          </l1>
-          <l1
-            >Company
-            <ul>
-              <li>About</li>
-              <li>Team</li>
-              <li>Blog</li>
-              <li>Careers</li>
-            </ul>
-          </l1>
-          <l1
-            >Connect
-            <ul>
-              <li>Contact</li>
-              <li>Newsletter</li>
-              <li>LinkedIn</li>
-            </ul>
-          </l1>
-        </ul>
+        <img src="./images/logo.svg" alt="" width="101px" height="40px" />
+        <l1 class="foothead"
+          >Product
+          <ul>
+            <li>Overview</li>
+            <li>Pricing</li>
+            <li>Marketplace</li>
+            <li>Features</li>
+            <li>Integrations</li>
+          </ul>
+        </l1>
+        <l1
+          >Company
+          <ul>
+            <li>About</li>
+            <li>Team</li>
+            <li>Blog</li>
+            <li>Careers</li>
+          </ul>
+        </l1>
+        <l1
+          >Connect
+          <ul>
+            <li>Contact</li>
+            <li>Newsletter</li>
+            <li>LinkedIn</li>
+          </ul>
+        </l1>
       </footer>
     </div>
   </body>
