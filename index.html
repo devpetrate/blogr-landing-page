@@ -69,40 +69,72 @@
       }
       .headerleft {
         display: flex;
-        align-items: center;
       }
       nav {
         padding: 0 1rem;
         font-size: 15px;
       }
-      nav * {
+      nav ul {
+        display: flex;
+      }
+      nav li {
+        position: relative;
+        list-style: none;
         margin: 0 1rem;
+        cursor: pointer;
+      }
+      nav li:hover {
+        text-decoration: underline 2px;
       }
 
       .headerright {
         display: flex;
+        flex: 1;
         align-items: center;
+        justify-content: space-between;
       }
       .dropdown {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 10rem;
+        background: #fff;
+        border-radius: 5px;
+        padding: 2rem 1rem;
+        z-index: 1;
+        list-style: none;
+        color: var(--Verydarkblue);
+        margin-top: 1rem;
       }
-      .headerright button,
+      nav li:hover .dropdown {
+        display: block;
+      }
+      .dropdown li:hover {
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .dropdown li {
+        font-size: 16px;
+        margin: 5px 1rem;
+      }
+      .btn button,
       .main1 button {
         padding: 0.5rem 1rem;
         border-radius: 16px;
         margin: 0 0 0 0.5rem;
         font-weight: bold;
       }
-      .headerright button:first-child {
+      .btn button:first-child {
         color: var(--White);
         background-color: inherit;
         border: none;
       }
-      .headerright button:last-child {
+      .btn button:last-child {
         color: var(--Lightred);
         border: none;
       }
-      .headerright button:hover,
+      .btn button:hover,
       .btnfirst:hover {
         background-color: var(--Verylightred);
         color: var(--White);
@@ -158,10 +190,9 @@
         text-align: center;
         margin-bottom: 3rem;
         color: var(--Verydarkblue);
-      }
-      .section2 h1 {
         font-size: 50px;
       }
+
       .section2 h2 {
         margin: 1.5rem 0;
         color: var(--Verydarkblue);
@@ -235,11 +266,20 @@
         align-content: center;
         padding: 6rem 24px;
         background-color: var(--Verydarkblackblue);
+        color: var(--White);
       }
-      .foothead {
-        color: var(--white);
+      footer ul {
+        margin-top: 2rem;
+        font-weight: lighter;
+        cursor: pointer;
       }
-
+      footer li {
+        list-style-type: none;
+        margin-top: 0.5rem;
+      }
+      footer ul li:hover {
+        text-decoration: underline;
+      }
       @media screen and (width >= 1000px) {
         .maincontainer,
         .section2,
@@ -250,6 +290,95 @@
           padding-left: 168px;
         }
       }
+      @media (width <=775px) {
+        .headerleft {
+          justify-content: space-between;
+          flex: 1;
+        }
+        header {
+          position: relative;
+          display: flex;
+          justify-content: center;
+        }
+        .headerright {
+          display: none;
+          position: absolute;
+          justify-self: center;
+          top: 50px;
+          background-color: var(--White);
+          color: var(--Verydarkblue);
+          flex: 0;
+          flex-direction: column;
+          width: 20rem;
+          border-radius: 5px;
+          padding: 1rem 0;
+          text-align: center;
+        }
+        hr {
+          width: 15rem;
+          color: var(--White);
+        }
+        nav ul,
+        .btn {
+          display: flex;
+          flex-direction: column;
+          justify-items: center;
+        }
+        nav li {
+          padding: 1rem 0;
+        }
+        .btn button {
+          margin: 0.5rem 0;
+        }
+        .dropdown {
+          position: relative;
+          padding: 0;
+          text-align: center;
+          background-color: var(--Grayishblue);
+        }
+        nav li:hover {
+          text-decoration: none;
+          text-align: center;
+        }
+        .headerleft img {
+          cursor: pointer;
+        }
+        .headerleft img:last-child:active {
+          content: url(./images/icon-close.svg);
+        }
+        .btn button:first-child {
+          color: var(--Verydarkblue);
+        }
+        .btn button:last-child {
+          background: linear-gradient(to right, var(--Verylightred), var(--Lightred));
+          color: var(--White);
+        }
+
+        /* main container style */
+        .maincontainer {
+          height: 90vh;
+        }
+        .main1 h1 {
+          font-size: 25px;
+          font-weight: lighter;
+          margin-bottom: 10px;
+        }
+        .main1 p {
+          font-size: small;
+          margin-bottom: 35px;
+        }
+        /* Section 2 style*/
+        .section2 {
+          background: #fff;
+        }
+        .section2 img {
+          justify-self: center;
+        }
+        .section2 h1 {
+          width: max-content;
+          font-size: 20px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -258,10 +387,14 @@
         <header>
           <div class="headerleft">
             <img src="./images/logo.svg" alt="" />
+            <img src="./images/icon-hamburger.svg" alt="" />
+          </div>
+          <div class="headerright">
             <nav>
               <ul>
-                <l1
-                  >Product
+                <li>
+                  Product
+                  <img src="./images/icon-arrow-light.svg" alt="arrow" />
                   <ul class="dropdown">
                     <li>Overview</li>
                     <li>Pricing</li>
@@ -269,30 +402,33 @@
                     <li>Features</li>
                     <li>Integrations</li>
                   </ul>
-                </l1>
-                <l1
-                  >Company
+                </li>
+                <li>
+                  Company
+                  <img src="./images/icon-arrow-light.svg" alt="arrow" />
                   <ul class="dropdown">
                     <li>About</li>
                     <li>Team</li>
                     <li>Blog</li>
                     <li>Careers</li>
                   </ul>
-                </l1>
-                <l1
-                  >Connect
+                </li>
+                <li>
+                  Connect
+                  <img src="./images/icon-arrow-light.svg" alt="arrow" />
                   <ul class="dropdown">
                     <li>Contact</li>
                     <li>Newsletter</li>
                     <li>LinkedIn</li>
                   </ul>
-                </l1>
+                </li>
               </ul>
             </nav>
-          </div>
-          <div class="headerright">
-            <button>Login</button>
-            <button>Sign Up</button>
+            <hr />
+            <div class="btn">
+              <button>Login</button>
+              <button>Sign Up</button>
+            </div>
           </div>
         </header>
         <main class="main1">
@@ -304,6 +440,7 @@
       </div>
       <div class="section2">
         <h1>Designed for the future</h1>
+        <img src="./images/illustration-editor-desktop.svg" alt="mainimg" />
         <h2>Introducing an extensible editor</h2>
         <p>
           Blogr features an exceedingly intuitive interface which lets you focus on one thing:
@@ -346,8 +483,8 @@
       </div>
       <footer>
         <img src="./images/logo.svg" alt="" width="101px" height="40px" />
-        <l1 class="foothead"
-          >Product
+        <li class="foothead">
+          Product
           <ul>
             <li>Overview</li>
             <li>Pricing</li>
@@ -355,24 +492,24 @@
             <li>Features</li>
             <li>Integrations</li>
           </ul>
-        </l1>
-        <l1
-          >Company
+        </li>
+        <li class="foothead">
+          Company
           <ul>
             <li>About</li>
             <li>Team</li>
             <li>Blog</li>
             <li>Careers</li>
           </ul>
-        </l1>
-        <l1
-          >Connect
+        </li>
+        <li class="foothead">
+          Connect
           <ul>
             <li>Contact</li>
             <li>Newsletter</li>
             <li>LinkedIn</li>
           </ul>
-        </l1>
+        </li>
       </footer>
     </div>
   </body>
