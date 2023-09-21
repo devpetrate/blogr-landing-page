@@ -70,6 +70,12 @@
       .headerleft {
         display: flex;
       }
+      .headerleft img:last-child {
+        display: none;
+      }
+      hr {
+        display: none;
+      }
       nav {
         padding: 0 1rem;
         font-size: 15px;
@@ -191,6 +197,9 @@
         margin-bottom: 3rem;
         color: var(--Verydarkblue);
         font-size: 50px;
+      }
+      .section2 img {
+        display: none;
       }
 
       .section2 h2 {
@@ -342,6 +351,9 @@
         }
         .headerleft img {
           cursor: pointer;
+        }
+        .headerleft img:last-child {
+          display: block;
         }
         .headerleft img:last-child:active {
           content: url(./images/icon-close.svg);
